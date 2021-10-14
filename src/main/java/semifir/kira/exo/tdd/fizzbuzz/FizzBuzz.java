@@ -37,11 +37,14 @@ public class FizzBuzz {
     }
 
     private void calculeFizzBuzzUnitaire(int valeurDeFizz, int valeurDeBuzz, List<String> results, int index) {
-        if (isMultiple(index, valeurDeFizz * valeurDeBuzz)){
+        if (isMultiple(index, valeurDeFizz) && isMultiple(index, valeurDeBuzz)){
             results.add("FizzBuzz");
         }
         else if(isMultiple(index, valeurDeFizz)){
             results.add("Fizz");
+        }
+        else if(isMultiple(index, valeurDeBuzz)){
+            results.add("Buzz");
         }
         else results.add("");
     }

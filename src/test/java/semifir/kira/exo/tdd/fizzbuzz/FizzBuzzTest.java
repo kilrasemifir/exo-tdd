@@ -77,4 +77,21 @@ class FizzBuzzTest {
         // THEN
         assertTrue(results.get(valeurFizz).contains("Fizz"));
     }
+
+    @DisplayName("Si l'index est multiple de buzz, alors le résultat est Buzz")
+    @ParameterizedTest()
+    @CsvSource({"1,4", "1,1", "5,5", "3,5"})
+    public void tetBuzz(String fizz, String buzz){
+        // GIVEN
+        int valeurMaximum = 100;
+        int valeurFizz = Integer.parseInt(fizz);
+        int valeurBuzz = Integer.parseInt(buzz);
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        // WHEN
+        List<String> results = fizzBuzz.run(valeurMaximum, valeurFizz, valeurBuzz);
+
+        // THEN
+        assertTrue(results.get(valeurBuzz).contains("Buzz"));
+    }
 }
