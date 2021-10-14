@@ -6,10 +6,12 @@ package semifir.kira.exo.tdd.tennis;
 public class CompteurDePoint {
 
     /**
-     * Permet de créer une nouvelle partie de tennis.
-     * @return la nouvelle partie de tennis.
+     * Créer une nouvelle partie de tennis.
+     * @param joueurDeTennis1 premier joueur de la partie
+     * @param joueurDeTennis2 deuxieme joueur de la partie
+     * @return la nouvelle partie de tennis
      */
-    public PartieDeTennis creerNouvellePartie(){
-        return new PartieDeTennis();
+    public PartieDeTennis creerNouvellePartie(JoueurDeTennis joueurDeTennis1, JoueurDeTennis joueurDeTennis2) {
+        return new PartieDeTennis(joueurDeTennis1, joueurDeTennis2);
     }
 }
