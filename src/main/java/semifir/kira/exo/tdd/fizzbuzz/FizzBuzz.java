@@ -31,12 +31,19 @@ public class FizzBuzz {
 
         List<String> results = new ArrayList<>();
         for (int index = 0; index < valeurMaximum; index++) {
-            if (isMultiple(index, valeurDeFizz*valeurDeBuzz)){
-                results.add("FizzBuzz");
-            }
-            else results.add("");
+            calculeFizzBuzzUnitaire(valeurDeFizz, valeurDeBuzz, results, index);
         }
         return results;
+    }
+
+    private void calculeFizzBuzzUnitaire(int valeurDeFizz, int valeurDeBuzz, List<String> results, int index) {
+        if (isMultiple(index, valeurDeFizz * valeurDeBuzz)){
+            results.add("FizzBuzz");
+        }
+        else if(isMultiple(index, valeurDeFizz)){
+            results.add("Fizz");
+        }
+        else results.add("");
     }
 
     private void verificationValeursFizzEtBuzz(int valeurDeFizz, int valeurDeBuzz) {
