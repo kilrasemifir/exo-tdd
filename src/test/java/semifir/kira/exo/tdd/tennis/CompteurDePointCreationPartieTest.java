@@ -37,4 +37,21 @@ class CompteurDePointCreationPartieTest {
         assertEquals(joueurDeTennis2, partieDeTennis.getJoueur2());
     }
 
+    @Test
+    @DisplayName("Au début de la partie les deux joueurs ont 0 points.")
+    public void testDebut0Point(){
+        // GIVEN
+        CompteurDePoint compteurDePoint = new CompteurDePoint();
+
+        // WHEN
+        PartieDeTennis partieDeTennis = compteurDePoint.creerNouvellePartie(joueurDeTennis1, joueurDeTennis2);
+        final ScoreTennis scoreJoueur1 = partieDeTennis.getScoreJoueur1();
+        final ScoreTennis scoreJoueur2 = partieDeTennis.getScoreJoueur2();
+
+        // THEN
+        assertEquals(0, scoreJoueur1.getPoint());
+        assertEquals(0, scoreJoueur2.getPoint());
+
+    }
+
 }
