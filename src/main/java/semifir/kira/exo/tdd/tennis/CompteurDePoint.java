@@ -35,6 +35,8 @@ public class CompteurDePoint {
             scoreGagnant.setPoint(30);
         } else if (scoreGagnant.getPoint() == 30){
             scoreGagnant.setPoint(40);
+        } else if (scoreGagnant.getPoint() == 40){
+            scoreGagnant.setAvantage(true);
         }
     }
 

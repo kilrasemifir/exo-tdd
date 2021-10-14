@@ -44,6 +44,7 @@ class CompteurDePointGagnerPointTest {
         compteurDePoint.gagnerUnPoint(partieDeTennis, joueurDeTennis1);
         // THEN
         assertEquals(pointsGagnant, partieDeTennis.getScoreJoueur1().getPoint());
+        assertEquals(pointsJoueur2, partieDeTennis.getScoreJoueur2().getPoint());
     }
 
     @ParameterizedTest()
@@ -62,7 +63,32 @@ class CompteurDePointGagnerPointTest {
         compteurDePoint.gagnerUnPoint(partieDeTennis, joueurDeTennis2);
         // THEN
         assertEquals(pointsGagnant, partieDeTennis.getScoreJoueur2().getPoint());
+        assertEquals(pointsJoueur1, partieDeTennis.getScoreJoueur1().getPoint());
     }
 
-    // TODO assertEquals(pointsJoueur2, partieDeTennis.getScoreJoueur2().getPoint());
+    @Test
+    @DisplayName("Si les deux joueurs sont a egalité a 40 points, si aucun joueur a un avantage, le joueur qui gagne le point gagne un avantage.")
+    public void testJoueur1Avantage(){
+
+        // GIVEN
+        PartieDeTennis partieDeTennis = compteurDePoint.creerNouvellePartie(joueurDeTennis1, joueurDeTennis2);
+        partieDeTennis.getScoreJoueur1().setPoint(40);
+        partieDeTennis.getScoreJoueur2().setPoint(40);
+        // WHEN
+        compteurDePoint.gagnerUnPoint(partieDeTennis, joueurDeTennis1);
+        // THEN
+        assertTrue(partieDeTennis.getScoreJoueur1().isAvantage());
+        assertFalse(partieDeTennis.getScoreJoueur2().isAvantage());
+
+        partieDeTennis.getScoreJoueur1().setPoint(40);
+        partieDeTennis.getScoreJoueur2().setPoint(40);
+        partieDeTennis.getScoreJoueur1().setAvantage(false);
+        // WHEN
+        compteurDePoint.gagnerUnPoint(partieDeTennis, joueurDeTennis2);
+        // THEN
+        assertTrue(partieDeTennis.getScoreJoueur2().isAvantage());
+        assertFalse(partieDeTennis.getScoreJoueur1().isAvantage());
+    }
+
+
 }
