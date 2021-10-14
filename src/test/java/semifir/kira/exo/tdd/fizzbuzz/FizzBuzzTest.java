@@ -94,4 +94,15 @@ class FizzBuzzTest {
         // THEN
         assertTrue(results.get(valeurBuzz).contains("Buzz"));
     }
+
+    @DisplayName("Si valeurMaximum est négative, alors léve une exception.")
+    @ParameterizedTest()
+    @ValueSource(ints = {-10, -100, -33, -190})
+    public void testValeurMaximumPositif(int valeurMaximum){
+        // GIVEN : Dans quel environment je lance le test
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThrows(FizzBuzzMauvaisArgumentException.class, ()->fizzBuzz.run(valeurMaximum, 3, 6));
+
+    }
 }

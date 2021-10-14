@@ -18,7 +18,7 @@ public class FizzBuzz {
      * </ul>
      *
      * @param valeurMaximum valeur jusqu'a la qu'elle aller. Elle représente la taille de la liste de retour.
-     *                      Cette valeur ne peut pas etre négative.
+     *                      Cette valeur ne peut pas être négative.
      * @param valeurDeFizz valeur de fizz.
      *                     Cette valeur ne peut pas être négative ou nulle.
      * @param valeurDeBuzz valeur de buzz.
@@ -26,8 +26,8 @@ public class FizzBuzz {
      * @return la liste des résultats de l'algorithme fizzbuzz.
      */
     public List<String> run(int valeurMaximum, int valeurDeFizz, int valeurDeBuzz){
-
-        verificationValeursFizzEtBuzz(valeurDeFizz, valeurDeBuzz);
+        
+        verificationValeurs(valeurMaximum, valeurDeFizz, valeurDeBuzz);
 
         List<String> results = new ArrayList<>();
         for (int index = 0; index < valeurMaximum; index++) {
@@ -49,7 +49,9 @@ public class FizzBuzz {
         else results.add("");
     }
 
-    private void verificationValeursFizzEtBuzz(int valeurDeFizz, int valeurDeBuzz) {
+    private void verificationValeurs(int valeurMaximum, int valeurDeFizz, int valeurDeBuzz) {
+        if (valeurMaximum<0)
+            throw new FizzBuzzMauvaisArgumentException("Valeur maximum doit etre positif, actuellement égale a "+valeurMaximum);
         if (valeurDeFizz ==0 || valeurDeBuzz ==0){
             throw new FizzBuzzMauvaisArgumentException("fizz est buzz ne peuvent pas etre nulle");
         }
