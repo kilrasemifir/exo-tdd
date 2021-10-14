@@ -38,8 +38,8 @@ class CompteurDePointCreationPartieTest {
     }
 
     @Test
-    @DisplayName("Au début de la partie les deux joueurs ont 0 points.")
-    public void testDebut0Point(){
+    @DisplayName("Au début de la partie les deux joueurs ont 0 points, jeux et sets.")
+    public void testDebut0PointJeuxSet(){
         // GIVEN
         CompteurDePoint compteurDePoint = new CompteurDePoint();
 
@@ -51,6 +51,10 @@ class CompteurDePointCreationPartieTest {
         // THEN
         assertEquals(0, scoreJoueur1.getPoint());
         assertEquals(0, scoreJoueur2.getPoint());
+        assertEquals(0, scoreJoueur1.getJeu());
+        assertEquals(0, scoreJoueur2.getJeu());
+        assertEquals(0, scoreJoueur1.getSet());
+        assertEquals(0, scoreJoueur2.getSet());
 
     }
 

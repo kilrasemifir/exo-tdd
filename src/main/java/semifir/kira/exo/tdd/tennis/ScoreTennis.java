@@ -6,4 +6,12 @@ public class ScoreTennis {
     public int getPoint() {
         return point;
     }
+
+    public int getJeu() {
+        return 0;
+    }
+
+    public int getSet() {
+        return 0;
+    }
 }
