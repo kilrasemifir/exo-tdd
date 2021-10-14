@@ -28,8 +28,15 @@ public class FizzBuzz {
     public List<String> run(int valeurMaximum, int valeurDeFizz, int valeurDeBuzz){
         List<String> results = new ArrayList<>();
         for (int index = 0; index < valeurMaximum; index++) {
-            results.add("");
+            if (isMultiple(index, valeurDeFizz*valeurDeBuzz)){
+                results.add("FizzBuzz");
+            }
+            else results.add("");
         }
         return results;
+    }
+
+    private boolean isMultiple(int valeurATester, int diviseur) {
+        return valeurATester % (diviseur) == 0;
     }
 }

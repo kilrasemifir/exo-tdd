@@ -2,6 +2,7 @@ package semifir.kira.exo.tdd.fizzbuzz;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
@@ -25,4 +26,23 @@ class FizzBuzzTest {
         // THEN : alors je veux avoir comme réponse
         assertEquals(valeurMaximum, results.size());
     }
+
+    @DisplayName("Si l'index est multiple de fizz et de buzz, allors le résultat est FizzBuzz")
+    @ParameterizedTest()
+    @CsvSource({"1,4", "1,1", "5,5", "3,5"})
+    public void testFizzetBuzz(String fizz, String buzz){
+        // GIVEN
+        int valeurMaximum = 100;
+        int valeurFizz = Integer.parseInt(fizz);
+        int valeurBuzz = Integer.parseInt(buzz);
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        // WHEN
+        List<String> results = fizzBuzz.run(valeurMaximum, valeurFizz, valeurBuzz);
+
+        // THEN
+        assertEquals("FizzBuzz", results.get(valeurFizz*valeurBuzz));
+    }
+
+    // TODO faire le cas ou fizz ou buzz est égale a 0;
 }
