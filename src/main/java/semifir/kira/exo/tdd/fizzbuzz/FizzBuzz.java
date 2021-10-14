@@ -1,5 +1,6 @@
 package semifir.kira.exo.tdd.fizzbuzz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FizzBuzz {
@@ -7,8 +8,8 @@ public class FizzBuzz {
     /**
      * Cette fonction retourne une liste de String contenant les résultats de la suite fizzbuzz.
      *
-     * Elle posséde une taille de valeurMaximum.
-     * Chaque String suis la régle suivante:
+     * Elle possède une taille de valeurMaximum.
+     * Chaque String suis la règle suivante:
      * <ul>
      *     <li>Si l'index du string est multiple de valeurDeFizz et valeurDeBuzz alors il est égale a FizzBuzz</li>
      *     <li>Sinon si l'index de string est multiple de valeurDeBuzz alors il est égale a Buzz</li>
@@ -25,6 +26,10 @@ public class FizzBuzz {
      * @return la liste des résultats de l'algorithme fizzbuzz.
      */
     public List<String> run(int valeurMaximum, int valeurDeFizz, int valeurDeBuzz){
-        return null;
+        List<String> results = new ArrayList<>();
+        for (int index = 0; index < valeurMaximum; index++) {
+            results.add("");
+        }
+        return results;
     }
 }
