@@ -6,13 +6,13 @@ public class ExempleDExceptions {
      * Cette methode lève une exception de type {@link RuntimeException}.
      * Une Exception enfant de {@link RuntimeException} n'a pas besoin d'etre spécifié dans
      * tout l'arbre d'appel de la méthode.
-     * </br>
+     * <br>
      * On appel ce type d'exception (Toute les classes enfants de RuntimeException) d'est <b>Unchecked Exception</b>
      * car elle sont géré par java lors de l'exécution et ne nécessite pas au développeur spécifié quand elle seront
      * géré.
-     * </br>
+     * <br>
      * Pour gérer un <b>Unchecked Exception</b> vous devez toujours utiliser le block de control try{}catch{}
-     * </br>
+     * <br>
      * {@link RuntimeException} est un enfant de {@link Exception}!
      */
     public void throwUncheckedException(){
@@ -26,6 +26,7 @@ public class ExempleDExceptions {
      *
      * Il est préférable d'utiliser plutôt des <b>Unchecked Exception</b> qui sont plus facile à géré et rende le code plus
      * facile a faire évolué.
+     * @throws Exception retourne une exception
      */
     public void throwCheckedException() throws Exception{
         throw new Exception("Checked exception");
@@ -34,6 +35,7 @@ public class ExempleDExceptions {
     /**
      * Cette méthode a besoin de definir throws Exception dans sa signature car une méthode qu'elle appel
      * lève une Checked Exception.
+     * @throws Exception retourne une exception
      */
     public void appelCheckedException() throws Exception {
         throwCheckedException();

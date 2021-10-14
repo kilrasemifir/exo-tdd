@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"semifir.kira.exo.exceptions"},{"l":"semifir.kira.exo.tdd.fizzbuzz"},{"l":"semifir.kira.exo.tdd.pyramide"}]

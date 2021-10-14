@@ -7,4 +7,5 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Test pour la fonctionnalité FizzBuzz")
 class FizzBuzzTest {
 
+
 }

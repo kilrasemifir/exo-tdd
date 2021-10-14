@@ -12,7 +12,7 @@ public class Pyramide {
     /**
      * Cette méthode retourne une liste de String représentant une pyramide d'etoile.
      * <p>
-     * pyramide(3) -> [ *, **, ***, **, * ]
+     * pyramide(3) : [ *, **, ***, **, * ]
      * <p>
      * Elle doit retourner une liste de String
      * Elle doit avoir une certaine taille (pour une taille de 3 elle doit avoir une longueur de 5 String)
@@ -20,7 +20,7 @@ public class Pyramide {
      * ...
      *
      * @param taille de l'element le plus grand de la pyramide.
-     * @return
+     * @return la liste contenant les etage de la pyramide
      */
     public List<String> pyramide(int taille) {
 

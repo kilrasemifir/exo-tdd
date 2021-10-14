@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"semifir.kira.exo.exceptions","l":"ExempleDExceptions"},{"p":"semifir.kira.exo.tdd.fizzbuzz","l":"FizzBuzz"},{"p":"semifir.kira.exo.tdd.pyramide","l":"Pyramide"},{"p":"semifir.kira.exo.tdd.pyramide","l":"PyramideBadArgumentException"}]
