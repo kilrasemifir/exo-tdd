@@ -44,5 +44,20 @@ class FizzBuzzTest {
         assertEquals("FizzBuzz", results.get(valeurFizz*valeurBuzz));
     }
 
-    // TODO faire le cas ou fizz ou buzz est égale a 0;
+    @DisplayName("Si fizz ou buzz est églae a 0, alors une exception est levé")
+    @ParameterizedTest()
+    @CsvSource({"0,2", "1,0", "0,0"})
+    public void testFizzOuBuzzNonNull(String fizz, String buzz){
+        // GIVEN
+        int valeurMaximum = 100;
+        int valeurFizz = Integer.parseInt(fizz);
+        int valeurBuzz = Integer.parseInt(buzz);
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        // WHEN
+        //List<String> results = fizzBuzz.run(valeurMaximum, valeurFizz, valeurBuzz);
+
+        // THEN
+        assertThrows(FizzBuzzMauvaisArgumentException.class, ()->fizzBuzz.run(valeurMaximum, valeurFizz, valeurBuzz));
+    }
 }

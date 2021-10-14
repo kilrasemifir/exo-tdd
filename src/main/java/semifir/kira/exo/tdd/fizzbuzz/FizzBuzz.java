@@ -26,6 +26,9 @@ public class FizzBuzz {
      * @return la liste des résultats de l'algorithme fizzbuzz.
      */
     public List<String> run(int valeurMaximum, int valeurDeFizz, int valeurDeBuzz){
+
+        verificationValeursFizzEtBuzz(valeurDeFizz, valeurDeBuzz);
+
         List<String> results = new ArrayList<>();
         for (int index = 0; index < valeurMaximum; index++) {
             if (isMultiple(index, valeurDeFizz*valeurDeBuzz)){
@@ -34,6 +37,12 @@ public class FizzBuzz {
             else results.add("");
         }
         return results;
+    }
+
+    private void verificationValeursFizzEtBuzz(int valeurDeFizz, int valeurDeBuzz) {
+        if (valeurDeFizz ==0 || valeurDeBuzz ==0){
+            throw new FizzBuzzMauvaisArgumentException("fizz est buzz ne peuvent pas etre nulle");
+        }
     }
 
     private boolean isMultiple(int valeurATester, int diviseur) {
