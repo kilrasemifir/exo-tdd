@@ -1,4 +1,4 @@
-package semifir.kira.exo.tdd;
+package semifir.kira.exo.tdd.pyramide;
 
 public class PyramideBadArgumentException extends RuntimeException{
     public PyramideBadArgumentException() {

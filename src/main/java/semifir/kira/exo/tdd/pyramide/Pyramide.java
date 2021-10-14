@@ -1,5 +1,5 @@
 
-package semifir.kira.exo.tdd;
+package semifir.kira.exo.tdd.pyramide;
 
 import java.util.ArrayList;
 import java.util.List;
