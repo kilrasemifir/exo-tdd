@@ -14,4 +14,8 @@ public class ScoreTennis {
     public int getSet() {
         return 0;
     }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
 }
